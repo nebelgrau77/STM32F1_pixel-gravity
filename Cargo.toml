@@ -1,0 +1,29 @@
+[package]
+name = "gravity"
+version = "0.1.0"
+authors = ["nebelgrau <nebelgrau@gmx.com>"]
+edition = "2018"
+
+[dependencies]
+embedded-hal = "0.2.3"
+ssd1306 = {version ="0.3.0-alpha.4", features=["graphics"]}
+cortex-m = "0.6.1"
+cortex-m-rt = "0.6.11"
+panic-halt = "0.2.0"
+embedded-graphics = {optional = true, version = "=0.6.0-alpha.3", features = ["bmp"]}
+rand = {version = "0.7.3", default-features = false, features = [ "small_rng" ]}
+stm32f1xx-hal = {version = "0.5.2", features = [ "rt", "stm32f103" ]}
+arrayvec = {version = "0.5.1", default-features = false}
+
+[features]
+default = ["graphics"]
+graphics = ["embedded-graphics"]
+
+[profile.dev]
+codegen-units = 1
+incremental = false
+
+[profile.release]
+codegen-units = 1
+debug = true
+lto = true
