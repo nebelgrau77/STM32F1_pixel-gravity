@@ -178,20 +178,22 @@ fn gravity(array: [[i8;128];32]) -> [[i8;128];32] {
                     new_array[row+1][col] = array[row][col];
                 }
                    
-
-                /*
+/*
+                
                 else if (col > 0) && (array[row+1][col-1] == 0) {
                     new_array[row][col] = 0;
                     new_array[row+1][col-1] = array[row][col];
                     }
     
+              
+
                 else if ((col+1) < 128) && (array[row+1][col+1] == 0) {
                     new_array[row][col] = 0;
                     new_array[row+1][col+1] = array[row][col];
                      
                     }
                 
-                */
+  */
 
                 else {
                     new_array[row][col] = array[row][col];
